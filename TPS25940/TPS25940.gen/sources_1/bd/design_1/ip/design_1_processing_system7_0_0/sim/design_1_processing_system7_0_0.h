@@ -80,6 +80,9 @@ public:
 
   // module pin-to-pin RTL interface
 
+  sc_core::sc_out< sc_dt::sc_bv<2> > USB0_PORT_INDCTL;
+  sc_core::sc_out< bool > USB0_VBUS_PWRSELECT;
+  sc_core::sc_in< bool > USB0_VBUS_PWRFAULT;
   sc_core::sc_out< bool > M_AXI_GP0_ARVALID;
   sc_core::sc_out< bool > M_AXI_GP0_AWVALID;
   sc_core::sc_out< bool > M_AXI_GP0_BREADY;
@@ -179,6 +182,9 @@ public:
 
   // module pin-to-pin RTL interface
 
+  sc_core::sc_out< sc_dt::sc_bv<2> > USB0_PORT_INDCTL;
+  sc_core::sc_out< bool > USB0_VBUS_PWRSELECT;
+  sc_core::sc_in< bool > USB0_VBUS_PWRFAULT;
   sc_core::sc_out< bool > M_AXI_GP0_ARVALID;
   sc_core::sc_out< bool > M_AXI_GP0_AWVALID;
   sc_core::sc_out< bool > M_AXI_GP0_BREADY;
@@ -220,27 +226,27 @@ public:
   sc_core::sc_in< sc_dt::sc_bv<32> > M_AXI_GP0_RDATA;
   sc_core::sc_out< bool > FCLK_CLK0;
   sc_core::sc_out< bool > FCLK_RESET0_N;
-  sc_core::sc_inout< sc_dt::sc_bv<54> > MIO;
-  sc_core::sc_inout< bool > DDR_CAS_n;
-  sc_core::sc_inout< bool > DDR_CKE;
-  sc_core::sc_inout< bool > DDR_Clk_n;
-  sc_core::sc_inout< bool > DDR_Clk;
-  sc_core::sc_inout< bool > DDR_CS_n;
-  sc_core::sc_inout< bool > DDR_DRSTB;
-  sc_core::sc_inout< bool > DDR_ODT;
-  sc_core::sc_inout< bool > DDR_RAS_n;
-  sc_core::sc_inout< bool > DDR_WEB;
-  sc_core::sc_inout< sc_dt::sc_bv<3> > DDR_BankAddr;
-  sc_core::sc_inout< sc_dt::sc_bv<15> > DDR_Addr;
-  sc_core::sc_inout< bool > DDR_VRN;
-  sc_core::sc_inout< bool > DDR_VRP;
-  sc_core::sc_inout< sc_dt::sc_bv<4> > DDR_DM;
-  sc_core::sc_inout< sc_dt::sc_bv<32> > DDR_DQ;
-  sc_core::sc_inout< sc_dt::sc_bv<4> > DDR_DQS_n;
-  sc_core::sc_inout< sc_dt::sc_bv<4> > DDR_DQS;
-  sc_core::sc_inout< bool > PS_SRSTB;
-  sc_core::sc_inout< bool > PS_CLK;
-  sc_core::sc_inout< bool > PS_PORB;
+  sc_core::sc_out< sc_dt::sc_bv<54> > MIO;
+  sc_core::sc_out< bool > DDR_CAS_n;
+  sc_core::sc_out< bool > DDR_CKE;
+  sc_core::sc_out< bool > DDR_Clk_n;
+  sc_core::sc_out< bool > DDR_Clk;
+  sc_core::sc_out< bool > DDR_CS_n;
+  sc_core::sc_out< bool > DDR_DRSTB;
+  sc_core::sc_out< bool > DDR_ODT;
+  sc_core::sc_out< bool > DDR_RAS_n;
+  sc_core::sc_out< bool > DDR_WEB;
+  sc_core::sc_out< sc_dt::sc_bv<3> > DDR_BankAddr;
+  sc_core::sc_out< sc_dt::sc_bv<15> > DDR_Addr;
+  sc_core::sc_out< bool > DDR_VRN;
+  sc_core::sc_out< bool > DDR_VRP;
+  sc_core::sc_out< sc_dt::sc_bv<4> > DDR_DM;
+  sc_core::sc_out< sc_dt::sc_bv<32> > DDR_DQ;
+  sc_core::sc_out< sc_dt::sc_bv<4> > DDR_DQS_n;
+  sc_core::sc_out< sc_dt::sc_bv<4> > DDR_DQS;
+  sc_core::sc_out< bool > PS_SRSTB;
+  sc_core::sc_out< bool > PS_CLK;
+  sc_core::sc_out< bool > PS_PORB;
 
   // Dummy Signals for IP Ports
 
@@ -278,6 +284,9 @@ public:
 
   // module pin-to-pin RTL interface
 
+  sc_core::sc_out< sc_dt::sc_bv<2> > USB0_PORT_INDCTL;
+  sc_core::sc_out< bool > USB0_VBUS_PWRSELECT;
+  sc_core::sc_in< bool > USB0_VBUS_PWRFAULT;
   sc_core::sc_out< bool > M_AXI_GP0_ARVALID;
   sc_core::sc_out< bool > M_AXI_GP0_AWVALID;
   sc_core::sc_out< bool > M_AXI_GP0_BREADY;
@@ -379,6 +388,9 @@ public:
 
   // module pin-to-pin RTL interface
 
+  sc_core::sc_out< sc_dt::sc_bv<2> > USB0_PORT_INDCTL;
+  sc_core::sc_out< bool > USB0_VBUS_PWRSELECT;
+  sc_core::sc_in< bool > USB0_VBUS_PWRFAULT;
   sc_core::sc_out< bool > M_AXI_GP0_ARVALID;
   sc_core::sc_out< bool > M_AXI_GP0_AWVALID;
   sc_core::sc_out< bool > M_AXI_GP0_BREADY;
@@ -486,6 +498,9 @@ public:
 
   // module pin-to-pin RTL interface
 
+  sc_core::sc_out< sc_dt::sc_bv<2> > USB0_PORT_INDCTL;
+  sc_core::sc_out< bool > USB0_VBUS_PWRSELECT;
+  sc_core::sc_in< bool > USB0_VBUS_PWRFAULT;
   sc_core::sc_out< bool > M_AXI_GP0_ARVALID;
   sc_core::sc_out< bool > M_AXI_GP0_AWVALID;
   sc_core::sc_out< bool > M_AXI_GP0_BREADY;

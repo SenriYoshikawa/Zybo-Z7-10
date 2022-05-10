@@ -84,6 +84,7 @@ set_property parent.project_path C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.xpr [cur
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
+set_property board_part digilentinc.com:zybo-z7-10:part0:1.0 [current_project]
 set_property ip_output_repo c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
@@ -105,10 +106,10 @@ set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 OPTRACE "Configure IP Cache" START { }
 
-set cacheID [config_ip_cache -export -no_bom  -dir C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.runs/design_1_processing_system7_0_0_synth_1 -new_name design_1_processing_system7_0_0 -ip [get_ips design_1_processing_system7_0_0]]
+set cached_ip [config_ip_cache -export -no_bom  -dir C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.runs/design_1_processing_system7_0_0_synth_1 -new_name design_1_processing_system7_0_0 -ip [get_ips design_1_processing_system7_0_0]]
 
 OPTRACE "Configure IP Cache" END { }
-if { $cacheID == "" } {
+if { $cached_ip eq {} } {
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
@@ -140,7 +141,7 @@ catch {
  set TIME_taken [expr [clock seconds] - $TIME_start]
 
  if { [get_msg_config -count -severity {CRITICAL WARNING}] == 0 } {
-  config_ip_cache -add -dcp design_1_processing_system7_0_0.dcp -move_files $ipCachedFiles   -synth_runtime $TIME_taken  -ip [get_ips design_1_processing_system7_0_0]
+  config_ip_cache -add -dcp design_1_processing_system7_0_0.dcp -move_files $ipCachedFiles -use_project_ipc  -synth_runtime $TIME_taken  -ip [get_ips design_1_processing_system7_0_0]
  }
 OPTRACE "Write IP Cache" END { }
 }
@@ -225,7 +226,7 @@ if { [catch {
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
-}; # end if cacheID 
+}; # end if cached_ip 
 
 if {[file isdir C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.ip_user_files/ip/design_1_processing_system7_0_0]} {
   catch { 
