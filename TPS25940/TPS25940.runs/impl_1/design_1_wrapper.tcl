@@ -143,6 +143,7 @@ OPTRACE "add files" START { }
   add_files C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.srcs/sources_1/bd/design_1/design_1.bd
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
+  read_xdc C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.srcs/constrs_1/new/TPS25940.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

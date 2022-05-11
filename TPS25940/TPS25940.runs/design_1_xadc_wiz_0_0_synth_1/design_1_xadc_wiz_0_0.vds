@@ -2,15 +2,14 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Tue May 10 14:42:08 2022
-# Process ID: 20232
+# Start of session at: Wed May 11 10:22:10 2022
+# Process ID: 57084
 # Current directory: C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.runs/design_1_xadc_wiz_0_0_synth_1
 # Command line: vivado.exe -log design_1_xadc_wiz_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_xadc_wiz_0_0.tcl
 # Log file: C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.runs/design_1_xadc_wiz_0_0_synth_1/design_1_xadc_wiz_0_0.vds
 # Journal file: C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.runs/design_1_xadc_wiz_0_0_synth_1\vivado.jou
 #-----------------------------------------------------------
 source design_1_xadc_wiz_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1147.816 ; gain = 0.000
 Command: synth_design -top design_1_xadc_wiz_0_0 -part xc7z010clg400-1 -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
@@ -18,12 +17,12 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 26204
+INFO: [Synth 8-7075] Helper process launched with PID 59888
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1179.801 ; gain = 31.984
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1178.992 ; gain = 55.930
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_1_xadc_wiz_0_0' [c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0.v:53]
-INFO: [Synth 8-638] synthesizing module 'design_1_xadc_wiz_0_0_axi_xadc' [c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0_axi_xadc.vhd:241]
+INFO: [Synth 8-638] synthesizing module 'design_1_xadc_wiz_0_0_axi_xadc' [c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0_axi_xadc.vhd:235]
 	Parameter C_INSTANCE bound to: design_1_xadc_wiz_0_0_axi_xadc - type: string 
 	Parameter C_FAMILY bound to: virtex7 - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 11 - type: integer 
@@ -227,8 +226,8 @@ INFO: [Synth 8-256] done synthesizing module 'design_1_xadc_wiz_0_0_axi_lite_ipi
 	Parameter IP_INTR_NUM bound to: 17 - type: integer 
 	Parameter C_SIM_MONITOR_FILE bound to: design.txt - type: string 
 	Parameter MUX_ADDR_NO bound to: 5 - type: integer 
-INFO: [Synth 8-3491] module 'design_1_xadc_wiz_0_0_xadc_core_drp' declared at 'c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0_xadc_core_drp.vhd:141' bound to instance 'AXI_XADC_CORE_I' of component 'design_1_xadc_wiz_0_0_xadc_core_drp' [c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0_axi_xadc.vhd:701]
-INFO: [Synth 8-638] synthesizing module 'design_1_xadc_wiz_0_0_xadc_core_drp' [c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0_xadc_core_drp.vhd:192]
+INFO: [Synth 8-3491] module 'design_1_xadc_wiz_0_0_xadc_core_drp' declared at 'c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0_xadc_core_drp.vhd:141' bound to instance 'AXI_XADC_CORE_I' of component 'design_1_xadc_wiz_0_0_xadc_core_drp' [c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0_axi_xadc.vhd:689]
+INFO: [Synth 8-638] synthesizing module 'design_1_xadc_wiz_0_0_xadc_core_drp' [c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0_xadc_core_drp.vhd:186]
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 11 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_FAMILY bound to: virtex7 - type: string 
@@ -236,16 +235,16 @@ INFO: [Synth 8-638] synthesizing module 'design_1_xadc_wiz_0_0_xadc_core_drp' [c
 	Parameter IP_INTR_NUM bound to: 17 - type: integer 
 	Parameter C_SIM_MONITOR_FILE bound to: design.txt - type: string 
 	Parameter MUX_ADDR_NO bound to: 5 - type: integer 
-	Parameter INIT_40 bound to: 16'b0000000000000000 
-	Parameter INIT_41 bound to: 16'b0010000110100000 
+	Parameter INIT_40 bound to: 16'b0000000000000011 
+	Parameter INIT_41 bound to: 16'b0011000110100000 
 	Parameter INIT_42 bound to: 16'b0000010000000000 
 	Parameter INIT_43 bound to: 16'b0000000000000000 
 	Parameter INIT_44 bound to: 16'b0000000000000000 
 	Parameter INIT_45 bound to: 16'b0000000000000000 
 	Parameter INIT_46 bound to: 16'b0000000000000000 
 	Parameter INIT_47 bound to: 16'b0000000000000000 
-	Parameter INIT_48 bound to: 16'b0000100000000000 
-	Parameter INIT_49 bound to: 16'b0000001001000010 
+	Parameter INIT_48 bound to: 16'b0000000100000000 
+	Parameter INIT_49 bound to: 16'b0000000000000000 
 	Parameter INIT_4A bound to: 16'b0000000000000000 
 	Parameter INIT_4B bound to: 16'b0000000000000000 
 	Parameter INIT_4C bound to: 16'b0000000000000000 
@@ -272,8 +271,8 @@ INFO: [Synth 8-638] synthesizing module 'design_1_xadc_wiz_0_0_xadc_core_drp' [c
 	Parameter IS_DCLK_INVERTED bound to: 1'b0 
 	Parameter SIM_DEVICE bound to: ZYNQ - type: string 
 	Parameter SIM_MONITOR_FILE bound to: design.txt - type: string 
-INFO: [Synth 8-113] binding component instance 'XADC_INST' to cell 'XADC' [c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0_xadc_core_drp.vhd:975]
-INFO: [Synth 8-256] done synthesizing module 'design_1_xadc_wiz_0_0_xadc_core_drp' (5#1) [c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0_xadc_core_drp.vhd:192]
+INFO: [Synth 8-113] binding component instance 'XADC_INST' to cell 'XADC' [c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0_xadc_core_drp.vhd:969]
+INFO: [Synth 8-256] done synthesizing module 'design_1_xadc_wiz_0_0_xadc_core_drp' (5#1) [c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0_xadc_core_drp.vhd:186]
 INFO: [Synth 8-638] synthesizing module 'design_1_xadc_wiz_0_0_soft_reset' [c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/proc_common_v3_30_a/hdl/src/vhdl/design_1_xadc_wiz_0_0_soft_reset.vhd:142]
 	Parameter C_SIPIF_DWIDTH bound to: 32 - type: integer 
 	Parameter C_RESET_WIDTH bound to: 16 - type: integer 
@@ -405,21 +404,21 @@ INFO: [Synth 8-638] synthesizing module 'design_1_xadc_wiz_0_0_interrupt_control
 	Parameter C_INCLUDE_DEV_ISC bound to: 0 - type: bool 
 	Parameter C_IPIF_DWIDTH bound to: 32 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'design_1_xadc_wiz_0_0_interrupt_control' (7#1) [c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/interrupt_control_v2_01_a/hdl/src/vhdl/design_1_xadc_wiz_0_0_interrupt_control.vhd:240]
-INFO: [Synth 8-256] done synthesizing module 'design_1_xadc_wiz_0_0_axi_xadc' (8#1) [c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0_axi_xadc.vhd:241]
+INFO: [Synth 8-256] done synthesizing module 'design_1_xadc_wiz_0_0_axi_xadc' (8#1) [c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0_axi_xadc.vhd:235]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_xadc_wiz_0_0' (9#1) [c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0.v:53]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1276.809 ; gain = 128.992
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1276.383 ; gain = 153.320
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1276.809 ; gain = 128.992
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1276.383 ; gain = 153.320
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1276.809 ; gain = 128.992
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1276.383 ; gain = 153.320
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1276.809 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1276.383 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 18 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -434,28 +433,28 @@ Parsing XDC File [C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.runs/design_1_xadc_wiz_
 Finished Parsing XDC File [C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.runs/design_1_xadc_wiz_0_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1346.176 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1348.770 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 17 instances were transformed.
   FDRSE => FDRSE (FDRE, LUT4, VCC): 17 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 1357.824 ; gain = 11.648
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1359.438 ; gain = 10.668
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1357.824 ; gain = 210.008
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1359.438 ; gain = 236.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1357.824 ; gain = 210.008
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1359.438 ; gain = 236.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.runs/design_1_xadc_wiz_0_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1357.824 ; gain = 210.008
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1359.438 ; gain = 236.375
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'design_1_xadc_wiz_0_0_slave_attachment'
 ---------------------------------------------------------------------------------------------------
@@ -468,7 +467,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'desig
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'design_1_xadc_wiz_0_0_slave_attachment'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1357.824 ; gain = 210.008
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1359.438 ; gain = 236.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -512,25 +511,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1357.824 ; gain = 210.008
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1359.438 ; gain = 236.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1357.824 ; gain = 210.008
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1359.438 ; gain = 236.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1368.566 ; gain = 220.750
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1371.402 ; gain = 248.340
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1368.566 ; gain = 220.750
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1371.402 ; gain = 248.340
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -548,37 +547,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1368.566 ; gain = 220.750
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1372.648 ; gain = 249.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1368.566 ; gain = 220.750
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1372.648 ; gain = 249.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1368.566 ; gain = 220.750
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1372.648 ; gain = 249.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1368.566 ; gain = 220.750
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1372.648 ; gain = 249.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1368.566 ; gain = 220.750
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1372.648 ; gain = 249.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1368.566 ; gain = 220.750
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1372.648 ; gain = 249.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -605,29 +604,29 @@ Report Cell Usage:
 |9     |FDSE |    31|
 +------+-----+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1368.566 ; gain = 220.750
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1372.648 ; gain = 249.586
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:27 . Memory (MB): peak = 1368.566 ; gain = 139.734
-Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1368.566 ; gain = 220.750
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1372.648 ; gain = 166.531
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1372.648 ; gain = 249.586
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1368.566 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1372.648 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1383.562 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1383.930 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
 108 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:41 . Memory (MB): peak = 1383.562 ; gain = 235.746
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:37 . Memory (MB): peak = 1383.930 ; gain = 260.867
 INFO: [Common 17-1381] The checkpoint 'C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.runs/design_1_xadc_wiz_0_0_synth_1/design_1_xadc_wiz_0_0.dcp' has been generated.
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_xadc_wiz_0_0, cache-ID = 094c6cbaa9333fce
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_xadc_wiz_0_0, cache-ID = 4c26764beada4774
 INFO: [Coretcl 2-1174] Renamed 7 cell refs.
 INFO: [Common 17-1381] The checkpoint 'C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.runs/design_1_xadc_wiz_0_0_synth_1/design_1_xadc_wiz_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_xadc_wiz_0_0_utilization_synth.rpt -pb design_1_xadc_wiz_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue May 10 14:43:09 2022...
+INFO: [Common 17-206] Exiting Vivado at Wed May 11 10:23:02 2022...

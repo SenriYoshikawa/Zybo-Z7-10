@@ -20,3 +20,6 @@ domain active {zynq_fsbl}
 domain active {standalone_ps7_cortexa9_0}
 platform generate -quick
 platform generate
+platform active {design_1_wrapper}
+platform config -updatehw {C:/GitHub/Zybo-Z7-10/TPS25940/design_1_wrapper.xsa}
+platform generate -domains 

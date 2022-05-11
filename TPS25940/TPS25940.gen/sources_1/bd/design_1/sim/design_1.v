@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-//Date        : Tue May 10 14:40:36 2022
+//Date        : Wed May 11 10:21:58 2022
 //Host        : 10980XE running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -11,13 +11,7 @@
 
 (* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=6,numReposBlks=4,numNonXlnxBlks=0,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
-   (A1_N,
-    A1_P,
-    A6_N,
-    A6_P,
-    A9_N,
-    A9_P,
-    DDR_addr,
+   (DDR_addr,
     DDR_ba,
     DDR_cas_n,
     DDR_ck_n,
@@ -37,13 +31,9 @@ module design_1
     FIXED_IO_mio,
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
-    FIXED_IO_ps_srstb);
-  input A1_N;
-  input A1_P;
-  input A6_N;
-  input A6_P;
-  input A9_N;
-  input A9_P;
+    FIXED_IO_ps_srstb,
+    vn_in_0,
+    vp_in_0);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]DDR_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR BA" *) inout [2:0]DDR_ba;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR CAS_N" *) inout DDR_cas_n;
@@ -65,6 +55,8 @@ module design_1
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK" *) inout FIXED_IO_ps_clk;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB" *) inout FIXED_IO_ps_porb;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB" *) inout FIXED_IO_ps_srstb;
+  input vn_in_0;
+  input vp_in_0;
 
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
@@ -145,19 +137,11 @@ module design_1
   wire [3:0]ps7_0_axi_periph_M00_AXI_WSTRB;
   wire ps7_0_axi_periph_M00_AXI_WVALID;
   wire [0:0]rst_ps7_0_50M_peripheral_aresetn;
-  wire vauxn1_0_1;
-  wire vauxn6_0_1;
-  wire vauxn9_0_1;
-  wire vauxp1_0_1;
-  wire vauxp6_0_1;
-  wire vauxp9_0_1;
+  wire vn_in_0_1;
+  wire vp_in_0_1;
 
-  assign vauxn1_0_1 = A1_N;
-  assign vauxn6_0_1 = A6_N;
-  assign vauxn9_0_1 = A9_N;
-  assign vauxp1_0_1 = A1_P;
-  assign vauxp6_0_1 = A6_P;
-  assign vauxp9_0_1 = A9_P;
+  assign vn_in_0_1 = vn_in_0;
+  assign vp_in_0_1 = vp_in_0;
   design_1_processing_system7_0_0 processing_system7_0
        (.DDR_Addr(DDR_addr[14:0]),
         .DDR_BankAddr(DDR_ba[2:0]),
@@ -311,14 +295,8 @@ module design_1
         .s_axi_wready(ps7_0_axi_periph_M00_AXI_WREADY),
         .s_axi_wstrb(ps7_0_axi_periph_M00_AXI_WSTRB),
         .s_axi_wvalid(ps7_0_axi_periph_M00_AXI_WVALID),
-        .vauxn1(vauxn1_0_1),
-        .vauxn6(vauxn6_0_1),
-        .vauxn9(vauxn9_0_1),
-        .vauxp1(vauxp1_0_1),
-        .vauxp6(vauxp6_0_1),
-        .vauxp9(vauxp9_0_1),
-        .vn_in(1'b0),
-        .vp_in(1'b0));
+        .vn_in(vn_in_0_1),
+        .vp_in(vp_in_0_1));
 endmodule
 
 module design_1_ps7_0_axi_periph_0

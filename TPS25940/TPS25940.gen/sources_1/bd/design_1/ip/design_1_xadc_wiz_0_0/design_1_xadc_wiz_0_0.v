@@ -47,7 +47,7 @@
 // PART OF THIS FILE AT ALL TIMES.
 `timescale 1ns / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1_xadc_wiz_0_0,xadc_wiz_v3_3_8,{component_name=design_1_xadc_wiz_0_0,enable_axi=true,enable_axi4stream=false,dclk_frequency=100,enable_busy=true,enable_convst=false,enable_convstclk=false,enable_dclk=true,enable_drp=false,enable_eoc=true,enable_eos=true,enable_vbram_alaram=false,enable_vccddro_alaram=true,enable_Vccint_Alaram=true,enable_Vccaux_alaram=true,enable_vccpaux_alaram=true,enable_vccpint_alaram=true,ot_alaram=true,user_temp_alaram=true,timing_mode=continuous,channel_averaging=None,sequencer_mode=on,startup_channel_selection=contineous_sequence}" *)
+(* CORE_GENERATION_INFO = "design_1_xadc_wiz_0_0,xadc_wiz_v3_3_8,{component_name=design_1_xadc_wiz_0_0,enable_axi=true,enable_axi4stream=false,dclk_frequency=100,enable_busy=true,enable_convst=false,enable_convstclk=false,enable_dclk=true,enable_drp=false,enable_eoc=true,enable_eos=true,enable_vbram_alaram=false,enable_vccddro_alaram=true,enable_Vccint_Alaram=true,enable_Vccaux_alaram=true,enable_vccpaux_alaram=true,enable_vccpint_alaram=true,ot_alaram=true,user_temp_alaram=true,timing_mode=continuous,channel_averaging=None,sequencer_mode=off,startup_channel_selection=single_channel}" *)
 
 
 module design_1_xadc_wiz_0_0
@@ -72,12 +72,6 @@ module design_1_xadc_wiz_0_0
     output s_axi_rvalid,
     input s_axi_rready,
     output ip2intc_irpt,
-    input vauxp1,                                              
-    input vauxn1,                                              
-    input vauxp6,                                              
-    input vauxn6,                                              
-    input vauxp9,                                              
-    input vauxn9,                                              
     output [4:0] channel_out,
     output busy_out,        
     output eoc_out, 
@@ -127,12 +121,6 @@ module design_1_xadc_wiz_0_0
     .s_axi_rvalid    (s_axi_rvalid),                    
     .s_axi_rready    (s_axi_rready),                    
     .ip2intc_irpt    (ip2intc_irpt),  
-    .vauxp1 (vauxp1),
-    .vauxn1 (vauxn1),
-    .vauxp6 (vauxp6),
-    .vauxn6 (vauxn6),
-    .vauxp9 (vauxp9),
-    .vauxn9 (vauxn9),
     .channel_out(channel_out),
     .busy_out(busy_out), 
     .eoc_out(eoc_out), 

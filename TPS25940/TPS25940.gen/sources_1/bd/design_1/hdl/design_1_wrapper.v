@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-//Date        : Tue May 10 14:40:36 2022
+//Date        : Wed May 11 10:21:58 2022
 //Host        : 10980XE running 64-bit major release  (build 9200)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -10,13 +10,7 @@
 `timescale 1 ps / 1 ps
 
 module design_1_wrapper
-   (A1_N,
-    A1_P,
-    A6_N,
-    A6_P,
-    A9_N,
-    A9_P,
-    DDR_addr,
+   (DDR_addr,
     DDR_ba,
     DDR_cas_n,
     DDR_ck_n,
@@ -36,13 +30,9 @@ module design_1_wrapper
     FIXED_IO_mio,
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
-    FIXED_IO_ps_srstb);
-  input A1_N;
-  input A1_P;
-  input A6_N;
-  input A6_P;
-  input A9_N;
-  input A9_P;
+    FIXED_IO_ps_srstb,
+    vn_in_0,
+    vp_in_0);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -64,13 +54,9 @@ module design_1_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
+  input vn_in_0;
+  input vp_in_0;
 
-  wire A1_N;
-  wire A1_P;
-  wire A6_N;
-  wire A6_P;
-  wire A9_N;
-  wire A9_P;
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
   wire DDR_cas_n;
@@ -92,15 +78,11 @@ module design_1_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
+  wire vn_in_0;
+  wire vp_in_0;
 
   design_1 design_1_i
-       (.A1_N(A1_N),
-        .A1_P(A1_P),
-        .A6_N(A6_N),
-        .A6_P(A6_P),
-        .A9_N(A9_N),
-        .A9_P(A9_P),
-        .DDR_addr(DDR_addr),
+       (.DDR_addr(DDR_addr),
         .DDR_ba(DDR_ba),
         .DDR_cas_n(DDR_cas_n),
         .DDR_ck_n(DDR_ck_n),
@@ -120,5 +102,7 @@ module design_1_wrapper
         .FIXED_IO_mio(FIXED_IO_mio),
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
-        .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb));
+        .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
+        .vn_in_0(vn_in_0),
+        .vp_in_0(vp_in_0));
 endmodule

@@ -162,12 +162,8 @@ proc create_root_design { parentCell } {
 
 
   # Create ports
-  set A1_N [ create_bd_port -dir I A1_N ]
-  set A1_P [ create_bd_port -dir I A1_P ]
-  set A6_N [ create_bd_port -dir I A6_N ]
-  set A6_P [ create_bd_port -dir I A6_P ]
-  set A9_N [ create_bd_port -dir I A9_N ]
-  set A9_P [ create_bd_port -dir I A9_P ]
+  set vn_in_0 [ create_bd_port -dir I vn_in_0 ]
+  set vp_in_0 [ create_bd_port -dir I vp_in_0 ]
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -656,14 +652,14 @@ proc create_root_design { parentCell } {
   # Create instance: xadc_wiz_0, and set properties
   set xadc_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xadc_wiz:3.3 xadc_wiz_0 ]
   set_property -dict [ list \
-   CONFIG.CHANNEL_ENABLE_VAUXP1_VAUXN1 {true} \
-   CONFIG.CHANNEL_ENABLE_VAUXP6_VAUXN6 {true} \
-   CONFIG.CHANNEL_ENABLE_VAUXP9_VAUXN9 {true} \
-   CONFIG.CHANNEL_ENABLE_VP_VN {true} \
+   CONFIG.CHANNEL_ENABLE_VAUXP1_VAUXN1 {false} \
+   CONFIG.CHANNEL_ENABLE_VAUXP6_VAUXN6 {false} \
+   CONFIG.CHANNEL_ENABLE_VAUXP9_VAUXN9 {false} \
+   CONFIG.CHANNEL_ENABLE_VP_VN {false} \
    CONFIG.EXTERNAL_MUX_CHANNEL {VP_VN} \
-   CONFIG.SEQUENCER_MODE {Continuous} \
-   CONFIG.SINGLE_CHANNEL_SELECTION {TEMPERATURE} \
-   CONFIG.XADC_STARUP_SELECTION {channel_sequencer} \
+   CONFIG.SEQUENCER_MODE {Off} \
+   CONFIG.SINGLE_CHANNEL_SELECTION {VP_VN} \
+   CONFIG.XADC_STARUP_SELECTION {single_channel} \
  ] $xadc_wiz_0
 
   # Create interface connections
@@ -676,12 +672,8 @@ proc create_root_design { parentCell } {
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_50M/slowest_sync_clk] [get_bd_pins xadc_wiz_0/s_axi_aclk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_50M/ext_reset_in]
   connect_bd_net -net rst_ps7_0_50M_peripheral_aresetn [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_50M/peripheral_aresetn] [get_bd_pins xadc_wiz_0/s_axi_aresetn]
-  connect_bd_net -net vauxn1_0_1 [get_bd_ports A1_N] [get_bd_pins xadc_wiz_0/vauxn1]
-  connect_bd_net -net vauxn6_0_1 [get_bd_ports A6_N] [get_bd_pins xadc_wiz_0/vauxn6]
-  connect_bd_net -net vauxn9_0_1 [get_bd_ports A9_N] [get_bd_pins xadc_wiz_0/vauxn9]
-  connect_bd_net -net vauxp1_0_1 [get_bd_ports A1_P] [get_bd_pins xadc_wiz_0/vauxp1]
-  connect_bd_net -net vauxp6_0_1 [get_bd_ports A6_P] [get_bd_pins xadc_wiz_0/vauxp6]
-  connect_bd_net -net vauxp9_0_1 [get_bd_ports A9_P] [get_bd_pins xadc_wiz_0/vauxp9]
+  connect_bd_net -net vn_in_0_1 [get_bd_ports vn_in_0] [get_bd_pins xadc_wiz_0/vn_in]
+  connect_bd_net -net vp_in_0_1 [get_bd_ports vp_in_0] [get_bd_pins xadc_wiz_0/vp_in]
 
   # Create address segments
   assign_bd_address -offset 0x43C00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs xadc_wiz_0/s_axi_lite/Reg] -force

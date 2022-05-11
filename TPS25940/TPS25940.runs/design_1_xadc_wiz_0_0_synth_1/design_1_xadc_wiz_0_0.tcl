@@ -89,7 +89,7 @@ set_property ip_output_repo c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.cache/ip [cur
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.srcs/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0.xci
+read_ip -quiet C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.srcs/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0.xci
 set_property used_in_implementation false [get_files -all c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0.xdc]
 

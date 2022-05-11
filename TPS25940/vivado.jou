@@ -1,0 +1,49 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed May 11 10:19:11 2022
+# Process ID: 66144
+# Current directory: C:/GitHub/Zybo-Z7-10/TPS25940
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent58840 C:\GitHub\Zybo-Z7-10\TPS25940\TPS25940.xpr
+# Log file: C:/GitHub/Zybo-Z7-10/TPS25940/vivado.log
+# Journal file: C:/GitHub/Zybo-Z7-10/TPS25940\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.xpr
+update_compile_order -fileset sources_1
+open_bd_design {C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.srcs/sources_1/bd/design_1/design_1.bd}
+delete_bd_objs [get_bd_nets vauxn9_0_1] [get_bd_ports A9_N]
+delete_bd_objs [get_bd_nets vauxp6_0_1] [get_bd_ports A6_P]
+delete_bd_objs [get_bd_nets vauxn6_0_1]
+delete_bd_objs [get_bd_nets vauxp1_0_1] [get_bd_ports A1_P]
+delete_bd_objs [get_bd_nets vauxn1_0_1] [get_bd_ports A1_N]
+delete_bd_objs [get_bd_ports A6_N]
+delete_bd_objs [get_bd_nets vauxp9_0_1] [get_bd_ports A9_P]
+startgroup
+set_property -dict [list CONFIG.XADC_STARUP_SELECTION {single_channel} CONFIG.SINGLE_CHANNEL_SELECTION {VP_VN} CONFIG.SEQUENCER_MODE {Off} CONFIG.EXTERNAL_MUX_CHANNEL {VP_VN} CONFIG.CHANNEL_ENABLE_VP_VN {false} CONFIG.CHANNEL_ENABLE_VAUXP1_VAUXN1 {false} CONFIG.CHANNEL_ENABLE_VAUXP6_VAUXN6 {false} CONFIG.CHANNEL_ENABLE_VAUXP9_VAUXN9 {false}] [get_bd_cells xadc_wiz_0]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins xadc_wiz_0/vn_in]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins xadc_wiz_0/vp_in]
+endgroup
+save_bd_design
+regenerate_bd_layout
+reset_run design_1_xadc_wiz_0_0_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 18
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+place_ports vn_in_0 L10
+file mkdir C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.srcs/constrs_1/new
+close [ open C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.srcs/constrs_1/new/TPS25940.xdc w ]
+add_files -fileset constrs_1 C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.srcs/constrs_1/new/TPS25940.xdc
+set_property target_constrs_file C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.srcs/constrs_1/new/TPS25940.xdc [current_fileset -constrset]
+save_constraints -force
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 18
+wait_on_run impl_1
+close_design
+write_hw_platform -fixed -include_bit -force -file C:/GitHub/Zybo-Z7-10/TPS25940/design_1_wrapper.xsa

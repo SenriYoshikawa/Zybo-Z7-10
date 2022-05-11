@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Tue May 10 14:43:09 2022
+// Date        : Wed May 11 10:23:01 2022
 // Host        : 10980XE running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0_sim_netlist.v
@@ -34,12 +34,6 @@ module design_1_xadc_wiz_0_0
     s_axi_rvalid,
     s_axi_rready,
     ip2intc_irpt,
-    vauxp1,
-    vauxn1,
-    vauxp6,
-    vauxn6,
-    vauxp9,
-    vauxn9,
     channel_out,
     busy_out,
     eoc_out,
@@ -74,12 +68,6 @@ module design_1_xadc_wiz_0_0
   output s_axi_rvalid;
   input s_axi_rready;
   output ip2intc_irpt;
-  input vauxp1;
-  input vauxn1;
-  input vauxp6;
-  input vauxn6;
-  input vauxp9;
-  input vauxn9;
   output [4:0]channel_out;
   output busy_out;
   output eoc_out;
@@ -123,12 +111,6 @@ module design_1_xadc_wiz_0_0
   wire [3:0]s_axi_wstrb;
   wire s_axi_wvalid;
   wire user_temp_alarm_out;
-  wire vauxn1;
-  wire vauxn6;
-  wire vauxn9;
-  wire vauxp1;
-  wire vauxp6;
-  wire vauxp9;
   wire vccaux_alarm_out;
   wire vccddro_alarm_out;
   wire vccint_alarm_out;
@@ -198,12 +180,6 @@ module design_1_xadc_wiz_0_0
         .s_axi_wready(s_axi_wready),
         .s_axi_wstrb(s_axi_wstrb),
         .s_axi_wvalid(s_axi_wvalid),
-        .vauxn1(vauxn1),
-        .vauxn6(vauxn6),
-        .vauxn9(vauxn9),
-        .vauxp1(vauxp1),
-        .vauxp6(vauxp6),
-        .vauxp9(vauxp9),
         .vn_in(vn_in),
         .vp_in(vp_in));
 endmodule
@@ -2173,12 +2149,6 @@ module design_1_xadc_wiz_0_0_design_1_xadc_wiz_0_0_axi_xadc
     s_axi_rvalid,
     s_axi_rready,
     ip2intc_irpt,
-    vauxp1,
-    vauxn1,
-    vauxp6,
-    vauxn6,
-    vauxp9,
-    vauxn9,
     busy_out,
     channel_out,
     eoc_out,
@@ -2207,12 +2177,6 @@ module design_1_xadc_wiz_0_0_design_1_xadc_wiz_0_0_axi_xadc
   output s_axi_rvalid;
   input s_axi_rready;
   (* sigis = "INTR_LEVEL_HIGH" *) output ip2intc_irpt;
-  input vauxp1;
-  input vauxn1;
-  input vauxp6;
-  input vauxn6;
-  input vauxp9;
-  input vauxn9;
   output busy_out;
   output [4:0]channel_out;
   output eoc_out;
@@ -2366,12 +2330,6 @@ module design_1_xadc_wiz_0_0_design_1_xadc_wiz_0_0_axi_xadc
   wire status_reg_rdack_d1;
   wire sw_rst_cond;
   wire sw_rst_cond_d1;
-  wire vauxn1;
-  wire vauxn6;
-  wire vauxn9;
-  wire vauxp1;
-  wire vauxp6;
-  wire vauxp9;
   wire vn_in;
   wire vp_in;
   wire wrack;
@@ -2509,8 +2467,6 @@ module design_1_xadc_wiz_0_0_design_1_xadc_wiz_0_0_axi_xadc
         .\INTR_CTRLR_GEN_I.ip2bus_error_reg (AXI_LITE_IPIF_I_n_42),
         .\INTR_CTRLR_GEN_I.ip2bus_error_reg_0 (\INTR_CTRLR_GEN_I.ip2bus_error_i_3_n_0 ),
         .Q({\^alarm_out [7:4],AXI_XADC_CORE_I_n_32,\^alarm_out [2:0],alarm_reg}),
-        .VAUXN({vauxn9,vauxn6,vauxn1}),
-        .VAUXP({vauxp9,vauxp6,vauxp1}),
         .bus2ip_rdce({bus2ip_rdce[23],bus2ip_rdce[0]}),
         .bus2ip_reset_active_high(bus2ip_reset_active_high),
         .bus2ip_wrce(bus2ip_wrce),
@@ -5036,8 +4992,6 @@ module design_1_xadc_wiz_0_0_design_1_xadc_wiz_0_0_xadc_core_drp
     vn_in,
     vp_in,
     s_axi_wdata,
-    VAUXN,
-    VAUXP,
     \status_reg_reg[7]_0 ,
     reset2ip_reset,
     local_reg_wrack_d1_reg_0,
@@ -5084,8 +5038,6 @@ module design_1_xadc_wiz_0_0_design_1_xadc_wiz_0_0_xadc_core_drp
   input vn_in;
   input vp_in;
   input [15:0]s_axi_wdata;
-  input [2:0]VAUXN;
-  input [2:0]VAUXP;
   input [2:0]\status_reg_reg[7]_0 ;
   input reset2ip_reset;
   input local_reg_wrack_d1_reg_0;
@@ -5121,8 +5073,6 @@ module design_1_xadc_wiz_0_0_design_1_xadc_wiz_0_0_xadc_core_drp
   wire \INTR_CTRLR_GEN_I.ip2bus_error_reg_0 ;
   wire [8:0]Q;
   wire RESET;
-  wire [2:0]VAUXN;
-  wire [2:0]VAUXP;
   wire XADC_INST_n_34;
   wire alarm_0_d1;
   wire [8:2]bus2ip_addr;
@@ -5241,16 +5191,16 @@ module design_1_xadc_wiz_0_0_design_1_xadc_wiz_0_0_xadc_core_drp
         .O(local_reg_wrack_reg_0));
   (* box_type = "PRIMITIVE" *) 
   XADC #(
-    .INIT_40(16'h0000),
-    .INIT_41(16'h21A0),
+    .INIT_40(16'h0003),
+    .INIT_41(16'h31A0),
     .INIT_42(16'h0400),
     .INIT_43(16'h0000),
     .INIT_44(16'h0000),
     .INIT_45(16'h0000),
     .INIT_46(16'h0000),
     .INIT_47(16'h0000),
-    .INIT_48(16'h0800),
-    .INIT_49(16'h0242),
+    .INIT_48(16'h0100),
+    .INIT_49(16'h0000),
     .INIT_4A(16'h0000),
     .INIT_4B(16'h0000),
     .INIT_4C(16'h0000),
@@ -5298,8 +5248,8 @@ module design_1_xadc_wiz_0_0_design_1_xadc_wiz_0_0_xadc_core_drp
         .MUXADDR(NLW_XADC_INST_MUXADDR_UNCONNECTED[4:0]),
         .OT(s_axi_aclk_0[0]),
         .RESET(RESET),
-        .VAUXN({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,VAUXN[2],1'b0,1'b0,VAUXN[1],1'b0,1'b0,1'b0,1'b0,VAUXN[0],1'b0}),
-        .VAUXP({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,VAUXP[2],1'b0,1'b0,VAUXP[1],1'b0,1'b0,1'b0,1'b0,VAUXP[0],1'b0}),
+        .VAUXN({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .VAUXP({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .VN(vn_in),
         .VP(vp_in));
   (* SOFT_HLUTNM = "soft_lutpair24" *) 

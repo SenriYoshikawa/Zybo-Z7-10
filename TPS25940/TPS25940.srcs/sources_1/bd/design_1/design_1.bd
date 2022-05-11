@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xBD408D28114FCFD7",
+      "boundary_crc": "0xDE55442F536A2A38",
       "device": "xc7z010clg400-1",
       "gen_directory": "../../../../TPS25940.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -87,22 +87,10 @@
       }
     },
     "ports": {
-      "A1_N": {
+      "vn_in_0": {
         "direction": "I"
       },
-      "A1_P": {
-        "direction": "I"
-      },
-      "A6_N": {
-        "direction": "I"
-      },
-      "A6_P": {
-        "direction": "I"
-      },
-      "A9_N": {
-        "direction": "I"
-      },
-      "A9_P": {
+      "vp_in_0": {
         "direction": "I"
       }
     },
@@ -1250,28 +1238,28 @@
         "inst_hier_path": "xadc_wiz_0",
         "parameters": {
           "CHANNEL_ENABLE_VAUXP1_VAUXN1": {
-            "value": "true"
+            "value": "false"
           },
           "CHANNEL_ENABLE_VAUXP6_VAUXN6": {
-            "value": "true"
+            "value": "false"
           },
           "CHANNEL_ENABLE_VAUXP9_VAUXN9": {
-            "value": "true"
+            "value": "false"
           },
           "CHANNEL_ENABLE_VP_VN": {
-            "value": "true"
+            "value": "false"
           },
           "EXTERNAL_MUX_CHANNEL": {
             "value": "VP_VN"
           },
           "SEQUENCER_MODE": {
-            "value": "Continuous"
+            "value": "Off"
           },
           "SINGLE_CHANNEL_SELECTION": {
-            "value": "TEMPERATURE"
+            "value": "VP_VN"
           },
           "XADC_STARUP_SELECTION": {
-            "value": "channel_sequencer"
+            "value": "single_channel"
           }
         }
       },
@@ -1497,12 +1485,6 @@
           "processing_system7_0/FIXED_IO"
         ]
       },
-      "processing_system7_0_DDR": {
-        "interface_ports": [
-          "DDR",
-          "processing_system7_0/DDR"
-        ]
-      },
       "ps7_0_axi_periph_M00_AXI": {
         "interface_ports": [
           "ps7_0_axi_periph/M00_AXI",
@@ -1513,6 +1495,12 @@
         "interface_ports": [
           "processing_system7_0/M_AXI_GP0",
           "ps7_0_axi_periph/S00_AXI"
+        ]
+      },
+      "processing_system7_0_DDR": {
+        "interface_ports": [
+          "DDR",
+          "processing_system7_0/DDR"
         ]
       }
     },
@@ -1543,40 +1531,16 @@
           "ps7_0_axi_periph/ARESETN"
         ]
       },
-      "vauxn1_0_1": {
+      "vn_in_0_1": {
         "ports": [
-          "A1_N",
-          "xadc_wiz_0/vauxn1"
+          "vn_in_0",
+          "xadc_wiz_0/vn_in"
         ]
       },
-      "vauxp1_0_1": {
+      "vp_in_0_1": {
         "ports": [
-          "A1_P",
-          "xadc_wiz_0/vauxp1"
-        ]
-      },
-      "vauxn6_0_1": {
-        "ports": [
-          "A6_N",
-          "xadc_wiz_0/vauxn6"
-        ]
-      },
-      "vauxp6_0_1": {
-        "ports": [
-          "A6_P",
-          "xadc_wiz_0/vauxp6"
-        ]
-      },
-      "vauxn9_0_1": {
-        "ports": [
-          "A9_N",
-          "xadc_wiz_0/vauxn9"
-        ]
-      },
-      "vauxp9_0_1": {
-        "ports": [
-          "A9_P",
-          "xadc_wiz_0/vauxp9"
+          "vp_in_0",
+          "xadc_wiz_0/vp_in"
         ]
       }
     },

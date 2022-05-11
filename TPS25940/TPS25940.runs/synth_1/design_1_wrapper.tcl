@@ -87,7 +87,7 @@ set_property ip_output_repo c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.cache/ip [cur
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
+read_verilog -library xil_defaultlib C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
 add_files C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.srcs/sources_1/bd/design_1/design_1.bd
 set_property used_in_implementation false [get_files -all c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc]
 set_property used_in_implementation false [get_files -all c:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.gen/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0_ooc.xdc]
@@ -107,6 +107,9 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.srcs/constrs_1/new/TPS25940.xdc
+set_property used_in_implementation false [get_files C:/GitHub/Zybo-Z7-10/TPS25940/TPS25940.srcs/constrs_1/new/TPS25940.xdc]
+
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
