@@ -67,10 +67,6 @@
 #########
 !*.tcl
 #########
-#Journal - files
-#########
-!*.jou
-#########
 #Reports
 #########
 !*.rpt
@@ -84,3 +80,11 @@
 !*.elf
 !*.bmm
 !*.xmp
+
+**/**.cache
+**/**.hw
+**/**.ioplanning
+**/**.ip_user_files
+**/**.runs
+**/**.sim
+**/**.jou

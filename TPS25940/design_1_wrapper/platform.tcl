@@ -23,3 +23,5 @@ platform generate
 platform active {design_1_wrapper}
 platform config -updatehw {C:/GitHub/Zybo-Z7-10/TPS25940/design_1_wrapper.xsa}
 platform generate -domains 
+platform active {design_1_wrapper}
+platform config -updatehw {C:/GitHub/Zybo-Z7-10/TPS25940/design_1_wrapper.xsa}
