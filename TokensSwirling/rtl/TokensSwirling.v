@@ -5,7 +5,8 @@ module TokensSwirling (
     output [3:0] led,
     output led6_r,
     output led6_g,
-    output led6_b
+    output led6_b,
+    output [7:0] je
 );
 
 // Wire for ddp
@@ -36,9 +37,11 @@ wire program_write_start = btn[1];
 wire data_send_start = btn[2];
 wire [3:0] token_num = sw[3:0];
 wire led_toggle = btn[3] & ~pre_btn_3;
-assign led6_r = mm_overflow_pe;
-assign led6_g = write_program_done;
-assign led6_b = send_token_done;
+wire prob1;
+wire prob2;
+assign led6_r = led_on ? mm_overflow_pe : 1'b0;
+assign led6_g = led_on ? write_program_done : 1'b0;
+assign led6_b = led_on ? send_token_done : 1'b0;
 
 // led_on
 always @(posedge clk) begin
@@ -57,7 +60,7 @@ end
 assign send_i_ddp = write_program_done ? send_o_ds : send_o_pw;
 assign token_i_ddp = write_program_done ? token_o_ds : token_o_pw;
 assign led = led_on ? sw : 4'd0;
-assign je = sendo_o_smem1;
+assign je = {4'b0000, write_program_done, send_token_done, prob2, prob1};
 
 
 CUES uCUES(
@@ -86,7 +89,8 @@ CUES uCUES(
     .opr_ssw_to_icn(token_o_ddp[31:0]),
 
     .mm_overflow_o_pe(mm_overflow_pe),
-    .sendo_o_smem1(sendo_o_smem1)
+    .prob1(prob1),
+    .prob2(prob2)
 );
 
 ProgramWriter uProgramWriter(

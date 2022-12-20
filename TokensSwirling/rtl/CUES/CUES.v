@@ -37,7 +37,8 @@ module CUES
   //MM Condition
   mm_overflow_o_pe,
   // Probe
-  sendo_o_smem1
+  prob1,
+  prob2
   );
   
   /***********************************************************/
@@ -80,7 +81,8 @@ module CUES
   //MM Condition
   output        mm_overflow_o_pe;
   // Probe
-  output        sendo_o_smem1;
+  output        prob1;
+  output        prob2;
 
 
   /***********************************************************/
@@ -97,6 +99,7 @@ module CUES
   wire [1:0]    mem_wen_smer_to_sfc0;
   wire          nInterC_S_sMer_uCM_sFC0_uC;
   wire          nInterC_A_sMer_uCM_sSw_uCB;
+  assign prob1 = nInterC_S_sMer_uCM_sFC0_uC;
 
 
   /// sFC0 /////////////////////////////////////
@@ -110,6 +113,7 @@ module CUES
   wire          mtch_rslt_cex_sfc0_to_sfc1;
   wire          nInterC_S_sFC0_uC_sFC1_uCEX;
   wire          nInterC_A_sFC0_uC_sMer_uCM;
+  assign prob2 = nInterC_S_sFC0_uC_sFC1_uCEX;
 
 
   /// sFC1 /////////////////////////////////////
@@ -252,8 +256,7 @@ module CUES
   wire        next_uni_opr_smem1_to_ssb;
   wire        nInterC_S_sMem1_uCEX_sSB_uCB;
   wire        nInterC_A_sMem1_uCEX_sMem0_uC;
-  assign      sendo_o_smem1 = nInterC_S_sMem1_uCEX_sSB_uCB;
-
+  
 
   /// sSB //////////////////////////////////////
 

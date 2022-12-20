@@ -1,5 +1,6 @@
 # clk
 set_property -dict { PACKAGE_PIN K17 IOSTANDARD LVCMOS33 } [get_ports { clk }];
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets btn_IBUF[1]];
 
 # button
 set_property -dict { PACKAGE_PIN K18 IOSTANDARD LVCMOS33 } [get_ports { btn[0] }];
@@ -24,49 +25,68 @@ set_property -dict { PACKAGE_PIN F17 IOSTANDARD LVCMOS33 } [get_ports { led6_g }
 set_property -dict { PACKAGE_PIN M17 IOSTANDARD LVCMOS33 } [get_ports { led6_b }];
 
 # Pmod Je
-set_property -dict { PACKAGE_PIN V12   IOSTANDARD LVCMOS33 } [get_ports { je[0] }];
+set_property -dict { PACKAGE_PIN V12   IOSTANDARD LVCMOS33 } [get_ports { je[0] }]; #IO_L4P_T0_34 Sch=je[1]						 
+set_property -dict { PACKAGE_PIN W16   IOSTANDARD LVCMOS33 } [get_ports { je[1] }]; #IO_L18N_T2_34 Sch=je[2]                     
+set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { je[2] }]; #IO_25_35 Sch=je[3]                          
+set_property -dict { PACKAGE_PIN H15   IOSTANDARD LVCMOS33 } [get_ports { je[3] }]; #IO_L19P_T3_35 Sch=je[4]                     
+set_property -dict { PACKAGE_PIN V13   IOSTANDARD LVCMOS33 } [get_ports { je[4] }]; #IO_L3N_T0_DQS_34 Sch=je[7]                  
+set_property -dict { PACKAGE_PIN U17   IOSTANDARD LVCMOS33 } [get_ports { je[5] }]; #IO_L9N_T1_DQS_34 Sch=je[8]                  
+set_property -dict { PACKAGE_PIN T17   IOSTANDARD LVCMOS33 } [get_ports { je[6] }]; #IO_L20P_T3_34 Sch=je[9]                     
+set_property -dict { PACKAGE_PIN Y17   IOSTANDARD LVCMOS33 } [get_ports { je[7] }]; #IO_L7N_T1_34 Sch=je[10]                    
 
 set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sDec0/uC_Dec0/uCCORE/uISRP/pq];
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sDec0/uC_Dec0/uCCORE/uOSRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sExe0/uC_Exe0/uCCORE/uISRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sExe0/uC_Exe0/uCCORE/uOSRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sExe1/uCX2_Exe1/uCCOREA/uISRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sExe1/uCX2_Exe1/uCCOREA/uOSRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sExe1/uCX2_Exe1/uCCOREB/uISRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sExe1/uCX2_Exe1/uCCOREB/uOSRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sExe1/uCX2_Exe1/uFEB/cppkt_sexe1]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sFC0/uC_FC0/uCCORE/uISRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sFC0/uC_FC0/uCCORE/uOSRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sFC1/uCEX_FC1/uCCORE/uISRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sFC1/uCEX_FC1/uCCORE/uOSRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sFtc0/uC_Ftc0/uCCORE/uISRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sFtc0/uC_Ftc0/uCCORE/uOSRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sFtc1/uCEX_Ftc1/uCCORE/uISRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sFtc1/uCEX_Ftc1/uCCORE/uOSRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMem0/uC_Mem0/uCCORE/uISRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMem0/uC_Mem0/uCCORE/uOSRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMem1/uCEX_Mem1/uCCORE/uISRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMem1/uCEX_Mem1/uCCORE/uOSRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uAEB/aeb_smer]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uAEB/btn[0]]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uARB/GA]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uARB/arb_b2]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uARB/uRS1A/arb_a0]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uARB/uRS1B/arb_b0]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uCCOREA/uISRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uCCOREA/uOSRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uCCOREB/uISRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uCCOREB/uOSRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSB/uCB_SB/uCCORE/uISRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSB/uCB_SB/uCCORE/uOSRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uAEB/aeb_ssm]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uARB/GA]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uARB/arb_b2]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uARB/uRS1A/arb_a0]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uARB/uRS1B/arb_b0]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uCCOREA/uISRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uCCOREA/uOSRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uCCOREB/uISRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uCCOREB/uOSRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSw/uCB_Sw/uCCORE/uISRP/pq]
-set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSw/uCB_Sw/uCCORE/uOSRP/pq]
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sDec0/uC_Dec0/uCCORE/uOSRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sExe0/uC_Exe0/uCCORE/uISRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sExe0/uC_Exe0/uCCORE/uOSRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sExe1/uCX2_Exe1/uCCOREA/uISRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sExe1/uCX2_Exe1/uCCOREA/uOSRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sExe1/uCX2_Exe1/uCCOREB/uISRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sExe1/uCX2_Exe1/uCCOREB/uOSRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sExe1/uCX2_Exe1/uFEB/cppkt_sexe1];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sExe1/uCX2_Exe1/uFEB/QP];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sFC0/uC_FC0/uCCORE/uISRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sFC0/uC_FC0/uCCORE/uOSRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sFC1/uCEX_FC1/uCCORE/uISRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sFC1/uCEX_FC1/uCCORE/uOSRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sFtc0/uC_Ftc0/uCCORE/uISRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sFtc0/uC_Ftc0/uCCORE/uOSRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sFtc1/uCEX_Ftc1/uCCORE/uISRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sFtc1/uCEX_Ftc1/uCCORE/uOSRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMem0/uC_Mem0/uCCORE/uISRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMem0/uC_Mem0/uCCORE/uOSRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMem1/uCEX_Mem1/uCCORE/uISRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMem1/uCEX_Mem1/uCCORE/uOSRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uAEB/aeb_smer];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uAEB/btn[0];];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uARB/GA];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uARB/arb_b2];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uARB/uRS1A/arb_a0];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uARB/uRS1B/arb_b0];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uCCOREA/uISRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uCCOREA/uOSRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uCCOREB/uISRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uCCOREB/uOSRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSB/uCB_SB/uCCORE/uISRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSB/uCB_SB/uCCORE/uOSRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uAEB/aeb_ssm];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uARB/GA];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uARB/arb_b2];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uARB/uRS1A/arb_a0];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uARB/uRS1B/arb_b0];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uCCOREA/uISRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uCCOREA/uOSRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uCCOREB/uISRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uCCOREB/uOSRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSw/uCB_Sw/uCCORE/uISRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSw/uCB_Sw/uCCORE/uOSRP/pq];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uAEB/AEB];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uARB/uRS1A/QP];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uARB/uRS1B/QP];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uAEB/AEB];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uARB/uRS1A/QP];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uARB/uRS1B/QP];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uARB/uARB2a/YB];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sMer/uCM_Mer/uARB/uARB3a/YB];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uARB/uARB2a/YB];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uARB/uARB3a/YBYB_INST_0];
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets uCUES/sSM/uCM_SM/uARB/uARB3a/YB];

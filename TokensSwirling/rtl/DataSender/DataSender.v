@@ -14,7 +14,7 @@ reg start_buf;
 reg [3:0] send_count;
 wire last_token = token_num_i_ds == 6'd1 | send_count == token_num_i_ds - 4'd2;
 assign token_o_ds = last_token ? {1'b0, 1'b1, 2'b00, 14'd1, 12'd0,  full_loop_i_ds ? 32'h000f423f : 32'h000003e7} :// 最終トークンはnode 1へ入れる。
-                                    {1'b0, 1'b1, 2'b00, 14'd1, 12'd0, 32'h00000000}; 
+                                    {1'b0, 1'b1, 2'b00, 14'd1, 12'd0, send_count[0] ? 32'hFFFFFFFF : 32'h00000000}; 
 wire send_count_over = send_count >= token_num_i_ds - 4'd1;
 wire start_edge = ~start_buf & start_i_ds;
 
