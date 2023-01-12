@@ -18,6 +18,7 @@ wire [61:0] token_i_ddp;
 wire [61:0] token_o_ddp;
 wire        mm_overflow_pe;
 wire        sendo_o_smem1;
+assign ack_i_ddp = send_o_ddp; // 出力データをどこにも使わないのでそのまま返す
 
 // wire for Program writer
 wire        send_o_pw;
